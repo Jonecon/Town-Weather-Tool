@@ -1,47 +1,48 @@
 {
-  "name": "reactdoi",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "^4.3.1",
-    "isomorphic-unfetch": "^3.0.0",
-    "react": "^16.9.0",
-    "react-bootstrap": "^1.0.0-beta.12",
-    "react-dom": "^16.9.0",
-    "react-scripts": "^3.3.0",
-    "serve": "^11.2.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "reacttest": "react-scripts test",
-    "test": "mocha --exit 'tests/server/*.spec.js'",
-    "testcov": "nyc --report-dir tests/ --reporter json-summary mocha --reporter json 'tests/server/*.spec.js' --exit > mochatest.json",
-    "eject": "react-scripts eject",
-    "fvt": "./node_modules/.bin/nightwatch --config tests/fvt/nightwatch.conf.js -r junit -o reports; mv reports/*.xml junitfvt.xml"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "chai": "^3.4.0",
-    "chromedriver": "^79.0.0",
-    "mocha": "^6.2.2",
-    "nightwatch": "^1.3.2",
-    "nyc": "^14.1.1",
-    "rewire": "^2.3.4",
-    "sinon": "^1.17.7"
-  }
+	"name": "reactdoi",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"bootstrap": "^4.3.1",
+		"isomorphic-unfetch": "^3.0.0",
+		"react": "^16.9.0",
+		"react-bootstrap": "^1.0.0-beta.12",
+		"react-dom": "^16.9.0",
+		"react-scripts": "^3.3.0",
+		"serve": "^11.2.0",
+		"../components/TownResponse": "latest"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"reacttest": "react-scripts test",
+		"test": "mocha --exit 'tests/server/*.spec.js'",
+		"testcov": "nyc --report-dir tests/ --reporter json-summary mocha --reporter json 'tests/server/*.spec.js' --exit > mochatest.json",
+		"eject": "react-scripts eject",
+		"fvt": "./node_modules/.bin/nightwatch --config tests/fvt/nightwatch.conf.js -r junit -o reports; mv reports/*.xml junitfvt.xml"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"chai": "^3.4.0",
+		"chromedriver": "^79.0.0",
+		"mocha": "^6.2.2",
+		"nightwatch": "^1.3.2",
+		"nyc": "^14.1.1",
+		"rewire": "^2.3.4",
+		"sinon": "^1.17.7"
+	}
 }

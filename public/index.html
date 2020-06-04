@@ -29,8 +29,9 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <div id="map"></div>
+    <script src = "../components/TownResponse"></script>
     <script>
-    	const TownResp = require('../components/TownResponse');
+    	//onst TownResp = require('../components/TownResponse');
     	
     
     	var map;
@@ -56,7 +57,7 @@
 	
 				fetch("https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat=" + lat + "&lng=" + lng)
 				.then(response => response.json())
-				.then(json => TownResp.TownResponse(json));
+				.then(json => TownResponse(json));
 			}
 			
 			function updateMap(uMap, uMark, uPos, latLng){

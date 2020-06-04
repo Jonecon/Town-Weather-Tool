@@ -1,3 +1,4 @@
+/*eslint-env es_modules */
 import { TownResponse } from 'components/TownResponse.js';
 
 var map;

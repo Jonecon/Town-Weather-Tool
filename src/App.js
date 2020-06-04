@@ -5,12 +5,15 @@ import AppContainer from './containers/AppContainer';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <AppHeader />
-      <AppContainer />
-    </div>
-  );
+	return ( <
+		div className = "App" >
+		<
+		AppHeader / >
+		<
+		AppContainer / >
+		<
+		/div>
+	);
 }
 
 export default App;

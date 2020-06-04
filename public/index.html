@@ -29,7 +29,7 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <div id="map"></div>
-    <script src = "../components/TownResponse"></script>
+    <script src = "../components/TownResponse.js"></script>
     <script>
     	//onst TownResp = require('../components/TownResponse');
     	
@@ -47,13 +47,13 @@
 			marker = new google.maps.Marker({position: pos, map: map});
 	
 			map.addListener('click', function(e) {
-				findWeatherByLatLng(e.latLng);
-				updateMap(map, marker, pos, e.latLng);
-			});
+    			findWeatherByLatLng(e.latLng);
+    			updateMap(map, marker, pos, latLng);
+  			});
 			
 			function findWeatherByLatLng(latLng){
-				var lat = latLng.lat;
-				var lng = latLng.lng;
+				var lat = latLng.lat();
+				var lng = latLng.lng();
 	
 				fetch("https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat=" + lat + "&lng=" + lng)
 				.then(response => response.json())
@@ -61,7 +61,7 @@
 			}
 			
 			function updateMap(uMap, uMark, uPos, latLng){
-				marker.setPosition(new google.maps.LatLng(latLng.lat,latLng.lng));
+				marker.setPosition(new google.maps.LatLng(latLng.lat(),latLng.lng()));
 				
 			}
 		}

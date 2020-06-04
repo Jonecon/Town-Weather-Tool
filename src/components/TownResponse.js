@@ -16,7 +16,7 @@ function TownResponse(props) {
     }
 
     if(props.responseData.cod === 200) {
-    	window["updateMark"](props.responseData.coord.lat, props.responseData.coord.lon);
+    	window["updateMap"](props.responseData.coord.lat, props.responseData.coord.lon);
         return (
             <div className="col-sm-8">
                 <table className="table table-info table-hover">

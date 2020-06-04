@@ -30,7 +30,8 @@
     <div id="root"></div>
     <div id="map"></div>
     <script>
-    	//import { TownResponse } from './components/TownResponse.js';
+    	const TownResp = require('../components/TownResponse');
+    	
     
     	var map;
 		var marker;
@@ -45,17 +46,23 @@
 			marker = new google.maps.Marker({position: pos, map: map});
 	
 			map.addListener('click', function() {
-				//goToTown(e.latLng);
+				findWeatherByLatLng(e.latLng);
+				updateMap(map, marker, pos, e.latLng);
 			});
-		}
-
-		function goToTown(latLng){
-			var lat = latLng.lat;
-			var lng = latLng.lng;
+			
+			function findWeatherByLatLng(latLng){
+				var lat = latLng.lat;
+				var lng = latLng.lng;
 	
-			fetch("https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat=" + lat + "&lng=" + lng)
-			.then(response => response.json());
-			//.then(json => TownResponse(json));
+				fetch("https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat=" + lat + "&lng=" + lng)
+				.then(response => response.json())
+				.then(json => TownResp.TownResponse(json));
+			}
+			
+			function updateMap(uMap, uMark, uPos, latLng){
+				marker.setPosition(new google.maps.LatLng(latLng.lat,latLng.lng));
+				
+			}
 		}
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwXFziuX33A1QgegaG-rpAeX6VNdh3Zc4&callback=initMap"

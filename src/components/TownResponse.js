@@ -16,6 +16,7 @@ function TownResponse(props) {
     }
 
     if(props.responseData.cod === 200) {
+    	console.log(props.responseData);
         return (
             <div className="col-sm-8">
                 <table className="table table-info table-hover">

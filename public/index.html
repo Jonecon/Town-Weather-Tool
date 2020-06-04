@@ -48,7 +48,7 @@
 	
 			map.addListener('click', function(e) {
     			findWeatherByLatLng(e.latLng);
-    			updateMap(map, marker, pos, latLng);
+    			updateMap(map, marker, pos, e.latLng);
   			});
 			
 			function findWeatherByLatLng(latLng){

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import fetch from 'isomorphic-unfetch'
+import fetch from 'isomorphic-unfetch';
 import TownResponse from '../components/TownResponse';
 import Town from '../components/Town';
 

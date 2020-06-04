@@ -46,7 +46,7 @@
 
 			marker = new google.maps.Marker({position: pos, map: map});
 	
-			map.addListener('click', function() {
+			map.addListener('click', function(e) {
 				findWeatherByLatLng(e.latLng);
 				updateMap(map, marker, pos, e.latLng);
 			});

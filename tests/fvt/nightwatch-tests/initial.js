@@ -10,6 +10,7 @@ module.exports = {
         .end(done);
     },
 
+	/*
     'Navigate to the DemoDOI - valid zip': async (browser) => {
         const demodoi = browser.page.demodoi();
         const { cityName } = demodoi.section;
@@ -55,4 +56,36 @@ module.exports = {
 
         demodoi.expect.element('@invalidCity').text.to.equal('* should be a 5 digit number only');
     },
+    */
+   	'Navigate to the DemoDOI - valid Town': async (browser) => {
+        const demodoi = browser.page.demodoi();
+        const { cityName } = demodoi.section;
+    
+        await demodoi.navigate().waitForElementVisible('@inputText');
+
+        await demodoi.setValue('@inputText', [
+            'Hamilton',
+            browser.Keys.ENTER
+          ]);
+    
+        await demodoi.waitForElementVisible('@table');
+
+        cityName.expect.element('@firstApp').text.to.equal('Hamilton');
+    },
+
+    'Navigate to the DemoDOI - invalid Town': async (browser) => {
+        const demodoi = browser.page.demodoi();
+    
+        await demodoi.navigate().waitForElementVisible('@inputText');
+
+        await demodoi.setValue('@inputText', [
+            '9asdfasdf0',
+            browser.Keys.ENTER
+          ]);
+    
+        await demodoi.waitForElementNotPresent('@table');
+
+        demodoi.expect.element('@cityNotFound').text.to.equal('city not found');
+    },
+   
 };

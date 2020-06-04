@@ -45,7 +45,7 @@
 	
 			map.addListener('click', function(e) {
     			findWeatherByLatLng(e.latLng);
-    			updateMap(map, marker, pos, e.latLng);
+    			updateMap(e.latLng.lat(), e.latLng.lng());
   			});
 			
 			function findWeatherByLatLng(latLng){
@@ -54,8 +54,8 @@
 				.then(json => TownResponse(json));
 			}
 			
-			function updateMap(latLng){
-				marker.setPosition(new google.maps.LatLng(latLng.lat(),latLng.lng()));
+			function updateMap(lat, lng){
+				marker.setPosition(new google.maps.LatLng(lat,lng));
 				
 			}
 		}

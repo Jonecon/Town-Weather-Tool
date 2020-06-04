@@ -2,11 +2,12 @@
 	"plugins": {
 		"es_modules": {}
 	},
-	"ecmaVersion": 7,
+	"ecmaVersion": 6,
 	"libs": [
 		"ecma5",
 		"ecma6",
 		"ecma7"
 	],
-	"loadEagerly": []
+	"loadEagerly": [],
+	"sourceType": "module"
 }

@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import fetch from 'isomorphic-unfetch'
-import ZipResponse from '../components/ZipResponse';
-import Zip from '../components/Zip';
+import TownResponse from '../components/TownResponse';
+import Town from '../components/Town';
 
 function AppContainer(props) {
 
     const [responseData, setResponseData] = useState('');
 
-    const handleZipChange = async (zipValue) => {
-        console.log(`--------- fetchData called zip:${zipValue}`)
+    const handleTownChange = async (townValue) => {
+        console.log(`--------- fetchData called zip:${townValue}`)
         //const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=imperial&zip=${zipValue},us`)
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&q=${zipValue},uk`)
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&q=${townValue},nz`)
         const json = await res.json()
         //console.log(json);
         setResponseData(json);
@@ -24,12 +24,12 @@ function AppContainer(props) {
         <div>
             <div className="row mt-4">
                 <div className="col-sm-4"></div>
-                <Zip onZipChange={handleZipChange} clearResponse={clearResponse}/>
+                <Town onTownChange={handleTownChange} clearResponse={clearResponse}/>
                 <div className="col-sm-4"></div>
             </div>
             <div className="row mt-4">
                 <div className="col-sm-2"></div>
-                <ZipResponse responseData={responseData} clearResponse={clearResponse}/>
+                <TownResponse responseData={responseData} clearResponse={clearResponse}/>
                 <div className="col-sm-2"></div>
             </div>    
         </div>

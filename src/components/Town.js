@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Zip(props) {
+function Town(props) {
 
     const [validationError, setValidationError] = useState(null);
 
@@ -15,7 +15,7 @@ function Zip(props) {
         //    props.onZipChange(event.target.value);
         //}
         setValidationError('');
-        props.onZipChange(event.target.value);
+        props.onTownChange(event.target.value);
     };
 
     return (
@@ -32,7 +32,7 @@ function Zip(props) {
                         type="text" 
                         className="form-control" 
                         id="usr" 
-                        placeholder="US Zip Code (5 digit)"
+                        placeholder="New Zealand Town"
                         onKeyPress={(event) => {
                             if (event.key === "Enter") {
                                 validate(event);
@@ -48,4 +48,4 @@ function Zip(props) {
     );
 }
 
-export default Zip
+export default Town

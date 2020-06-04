@@ -9,8 +9,7 @@
 		"react-bootstrap": "^1.0.0-beta.12",
 		"react-dom": "^16.9.0",
 		"react-scripts": "^3.3.0",
-		"serve": "^11.2.0",
-		"../components/TownResponse": "latest"
+		"serve": "^11.2.0"
 	},
 	"scripts": {
 		"start": "react-scripts start",

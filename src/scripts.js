@@ -4,6 +4,10 @@ var map;
 var marker;
 var pos = {lat: -41.2866, lng: 174.7756};
 
+document.addEventListener('DOMContentLoaded', function() {
+   initMap();
+}, false);
+
 initMap = function() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: pos,

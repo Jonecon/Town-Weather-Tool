@@ -68,8 +68,7 @@
 			const ke = new KeyboardEvent("keydown", {
     			bubbles: true, cancelable: true, keyCode: 13
 			});
-			input.click();
-			document.body.dispatchEvent(ke);
+			input.dispatchEvent(ke);
 		}
 		
     </script>

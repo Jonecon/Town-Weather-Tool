@@ -64,6 +64,15 @@
 		function performSearch(result){
 			var input = document.getElementById('usr');	
 			
+			input.addEventListener("keyup", function(event) {
+				Console.log("Event");
+  				// Number 13 is the "Enter" key on the keyboard
+  				if (event.key === "Enter") {
+				    // Trigger the button element with a click
+    				console.log("Is Enter");
+  				}
+			});
+			
 			input.value = result.name;
 			const ke = new KeyboardEvent("keydown", {
     			bubbles: true, cancelable: true, key: "Enter"

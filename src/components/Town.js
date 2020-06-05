@@ -24,7 +24,7 @@ function Town(props) {
                         className="form-control" 
                         id="usr" 
                         placeholder="New Zealand Town"
-                        onKeyPress={(event) => {
+                        onkeydown={(event) => {
                             if (event.key === "Enter") {
                                 validate(event);
                             }

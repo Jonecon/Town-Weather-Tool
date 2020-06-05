@@ -65,7 +65,7 @@
 			var input = document.getElementById('usr');	
 			
 			input.value = result.name;
-			const ke = new KeyboardEvent("keydown", {
+			const ke = new KeyboardEvent("keypress", {
     			bubbles: true, cancelable: true, key: "Enter"
 			});
 			input.dispatchEvent(ke);

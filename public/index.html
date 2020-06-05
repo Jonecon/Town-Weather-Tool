@@ -53,13 +53,25 @@
 		function findWeatherByLatLng(latLng){
 			fetch("https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat=" + latLng.lat() + "&lon=" + latLng.lng())
 			.then(response => response.json())
-			.then(json => window["TownResponse"](json));
+			.then(json => performSearch(json));
 		}
 			
 		function updateMap(lat, lng){
 			marker.setPosition(new google.maps.LatLng(lat,lng));
 				
 		}
+		
+		function performSearch(result){
+			var input = document.getElementById('usr');	
+			
+			input.value = result.name;
+			
+			const ke = new KeyboardEvent("keydown", {
+    			bubbles: true, cancelable: true, keyCode: 13
+			});
+			document.body.dispatchEvent(ke);
+		}
+		
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwXFziuX33A1QgegaG-rpAeX6VNdh3Zc4&callback=initMap"
     async defer></script>

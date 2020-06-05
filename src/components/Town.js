@@ -26,7 +26,6 @@ function Town(props) {
                         placeholder="New Zealand Town"
                         onKeyDown={(event) => {
                             if (event.key === "Enter") {
-                            	console.log("We made it here");
                                 validate(event);
                             }
                         }}

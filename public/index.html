@@ -64,13 +64,6 @@
 		function performSearch(result){
 			var input = document.getElementById('usr');	
 			
-			input.addEventListener("keydown", function(event) {
-				console.log("Event");
-  				if (event.key === "Enter") {
-    				console.log("Is Enter");
-  				}
-			});
-			
 			input.value = result.name;
 			const ke = new KeyboardEvent("keydown", {
     			bubbles: true, key: "Enter"

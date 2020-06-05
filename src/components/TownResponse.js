@@ -56,7 +56,5 @@ function TownResponse(props) {
     }
     return null
 }
-
-window.TownResponse = TownResponse;
   
 export default TownResponse

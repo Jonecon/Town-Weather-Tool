@@ -29,6 +29,7 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <div id="map"></div>
+    <script src="../src/components/TownResponse.js" type="text/javascript"></script>
     <script type="text/javascript">
     	
     	var map;
@@ -53,7 +54,7 @@
 		function findWeatherByLatLng(latLng){
 			fetch("https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat=" + latLng.lat() + "&lon=" + latLng.lng())
 			.then(response => response.json())
-			.then(json => window["TownResopnse"](json));
+			.then(json => TownResponse(json));
 		}
 			
 		function updateMap(lat, lng){

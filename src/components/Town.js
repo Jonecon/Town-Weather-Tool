@@ -24,12 +24,13 @@ function Town(props) {
                         className="form-control" 
                         id="usr" 
                         placeholder="New Zealand Town"
-                        onkeydown={(event) => {
+                        onKeyDown={(event) => {
                             if (event.key === "Enter") {
                             	console.log("We made it here");
                                 validate(event);
                             }
                         }}
+                        tabIndex={0}
                     ></input>   
                 </div>
             </div>

@@ -1,4 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather Tool
+This app used a map, and a search box to allow users to get weather data about their town. This used the mapbox service to visualise a map for users, and then an API to get information about towns, and then those towns weather data.
+
+A user could either click on a location on the map to get that towns weather data, or the closest town to it, or search a town in the search bar in order to get weather data.
+
+This app was deployed on IBM Cloud, and was using React for most of the website.
 
 ## Available Scripts
 

@@ -26,7 +26,7 @@ goToTown = function(latLng){
 	var lat = latLng.lat;
 	var lng = latLng.lng;
 	
-	fetch("https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat=" + lat + "&lng=" + lng)
+	fetch("https://api.openweathermap.org/data/2.5/weather?appid=YOURID&units=metric&lat=" + lat + "&lng=" + lng)
 	.then(response => response.json())
 	.then(json => TownResponse(json));
 }
